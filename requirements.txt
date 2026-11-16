@@ -1,0 +1,13 @@
+numpy==2.2.6
+pandas==2.2.3
+scipy==1.15.3
+scikit-learn==1.6.1
+xgboost==3.0.2
+matplotlib==3.10.3
+seaborn==0.13.2
+joblib==1.5.1
+openpyxl==3.1.5
+nbformat==5.10.4
+nbclient==0.10.2
+ipykernel==6.29.5
+pillow==11.2.1

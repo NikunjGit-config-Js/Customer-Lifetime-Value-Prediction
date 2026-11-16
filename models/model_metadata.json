@@ -1,0 +1,35 @@
+{
+  "features": [
+    "recency_days",
+    "frequency",
+    "monetary",
+    "tenure_days",
+    "active_span_days",
+    "average_order_value",
+    "order_value_std",
+    "total_units",
+    "unique_products",
+    "active_months",
+    "mean_gap_days",
+    "gap_std_days",
+    "single_order",
+    "orders_last_30d",
+    "spend_last_30d",
+    "orders_last_90d",
+    "spend_last_90d",
+    "spend_per_observed_day",
+    "weekend_order_share"
+  ],
+  "tier_names": [
+    "No purchase",
+    "Regular spender",
+    "High spender"
+  ],
+  "positive_spend_median_gbp": 602.38,
+  "tier_rule": "0 if spend=0; 1 if 0<spend<=training_positive_median; 2 otherwise",
+  "prediction_cutoff": "2011-09-01",
+  "target_end_exclusive": "2011-12-01",
+  "train_customers": 2653,
+  "test_customers": 664,
+  "random_state": 42
+}

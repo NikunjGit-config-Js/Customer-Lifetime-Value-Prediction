@@ -1,0 +1,34 @@
+{
+  "status": "PASS",
+  "checks_passed": 11,
+  "checks": [
+    "Installed dependencies pass pip check",
+    "Official UCI row count, sequential cleaning totals and real customer counts reconcile",
+    "Customer-disjoint outer split; final target calibration and segment fitting use training IDs only",
+    "All historical features rebuild identically without future transactions; target/ID allow-list enforced",
+    "Final positive-spend boundary and RFM scaler statistics recompute from training customers only",
+    "Five fold boundaries recompute correctly; fold-local segmenters exclude validation and test IDs",
+    "Future-spending totals and tier boundary edge cases reconcile with real transactions",
+    "Reloaded model/baseline predictions, held-out accuracy, macro F1 and confusion matrices match saved results",
+    "Feature-only CSV inference reproduces all customer predictions; probabilities sum to one",
+    "Twelve completed five-fold XGBoost candidates and four genuine behavioral segments verified",
+    "Both notebooks fully executed with inline PNGs; all saved plots decode and contain nonblank image content"
+  ],
+  "notebooks": [
+    {
+      "name": "01_exploration.ipynb",
+      "code_cells": 7,
+      "inline_images": 4
+    },
+    {
+      "name": "02_customer_segmentation.ipynb",
+      "code_cells": 6,
+      "inline_images": 3
+    }
+  ],
+  "png_figures": 9,
+  "customers": 3317,
+  "train_customers": 2653,
+  "test_customers": 664,
+  "model_sha256": "2642da3f31ed71864f2bf01906c99c533993d00ebd93863d1406b2eece0d5541"
+}

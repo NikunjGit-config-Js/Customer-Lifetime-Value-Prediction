@@ -1,0 +1,152 @@
+{
+  "seed": 42,
+  "eligible_customers": 3317,
+  "train_customers": 2653,
+  "test_customers": 664,
+  "customer_overlap": 0,
+  "cv": {
+    "folds": 5,
+    "candidates": 12,
+    "total_fits": 60,
+    "refit_metric": "macro_f1",
+    "accuracy_mean": 0.5838780513804499,
+    "accuracy_std": 0.022294352949471546,
+    "macro_f1_mean": 0.5421710816705866,
+    "macro_f1_std": 0.016392876588743256,
+    "note": "Chosen candidate CV scores are tuning estimates; test remains independent."
+  },
+  "xgboost_test": {
+    "accuracy": 0.5813253012048193,
+    "macro_f1": 0.547430992209258,
+    "classification_report": {
+      "No purchase": {
+        "precision": 0.5759162303664922,
+        "recall": 0.7719298245614035,
+        "f1-score": 0.6596701649175413,
+        "support": 285.0
+      },
+      "Regular spender": {
+        "precision": 0.5045871559633027,
+        "recall": 0.2849740932642487,
+        "f1-score": 0.36423841059602646,
+        "support": 193.0
+      },
+      "High spender": {
+        "precision": 0.6416184971098265,
+        "recall": 0.5967741935483871,
+        "f1-score": 0.6183844011142061,
+        "support": 186.0
+      },
+      "accuracy": 0.5813253012048193,
+      "macro avg": {
+        "precision": 0.5740406278132072,
+        "recall": 0.5512260371246797,
+        "f1-score": 0.547430992209258,
+        "support": 664.0
+      },
+      "weighted avg": {
+        "precision": 0.5735880831593305,
+        "recall": 0.5813253012048193,
+        "f1-score": 0.562234200080986,
+        "support": 664.0
+      }
+    },
+    "confusion_matrix": [
+      [
+        220,
+        38,
+        27
+      ],
+      [
+        103,
+        55,
+        35
+      ],
+      [
+        59,
+        16,
+        111
+      ]
+    ]
+  },
+  "majority_baseline_test": {
+    "accuracy": 0.4292168674698795,
+    "macro_f1": 0.20021074815595363,
+    "classification_report": {
+      "No purchase": {
+        "precision": 0.4292168674698795,
+        "recall": 1.0,
+        "f1-score": 0.6006322444678609,
+        "support": 285.0
+      },
+      "Regular spender": {
+        "precision": 0.0,
+        "recall": 0.0,
+        "f1-score": 0.0,
+        "support": 193.0
+      },
+      "High spender": {
+        "precision": 0.0,
+        "recall": 0.0,
+        "f1-score": 0.0,
+        "support": 186.0
+      },
+      "accuracy": 0.4292168674698795,
+      "macro avg": {
+        "precision": 0.1430722891566265,
+        "recall": 0.3333333333333333,
+        "f1-score": 0.20021074815595363,
+        "support": 664.0
+      },
+      "weighted avg": {
+        "precision": 0.18422711932065614,
+        "recall": 0.4292168674698795,
+        "f1-score": 0.2578014904718981,
+        "support": 664.0
+      }
+    },
+    "confusion_matrix": [
+      [
+        285,
+        0,
+        0
+      ],
+      [
+        193,
+        0,
+        0
+      ],
+      [
+        186,
+        0,
+        0
+      ]
+    ]
+  },
+  "train_tier_counts": [
+    1161,
+    746,
+    746
+  ],
+  "test_tier_counts": [
+    285,
+    193,
+    186
+  ],
+  "positive_spend_median_gbp": 602.38,
+  "segmentation": {
+    "fit_customers": 2653,
+    "assigned_customers": 3317,
+    "clusters": 4,
+    "pca_components": 2,
+    "pca_explained_variance_ratio": [
+      0.7438531838919618,
+      0.1862325375248955
+    ],
+    "train_silhouette_pca_space": 0.4312419824336895
+  },
+  "saved_model_reload_prediction_match": true,
+  "historical_accuracy_above_85_reproduced": false,
+  "training_seconds": 80.58748919999925,
+  "python": "3.12.10"
+}

@@ -1,0 +1,16 @@
+[
+  {
+    "notebook": "01_exploration.ipynb",
+    "executed_code_cells": 7,
+    "inline_png_outputs": 4,
+    "errors": 0,
+    "kernel_python": "C:\\Users\\acer\\Projects\\customer-lifetime-value\\.venv\\Scripts\\python.exe"
+  },
+  {
+    "notebook": "02_customer_segmentation.ipynb",
+    "executed_code_cells": 6,
+    "inline_png_outputs": 3,
+    "errors": 0,
+    "kernel_python": "C:\\Users\\acer\\Projects\\customer-lifetime-value\\.venv\\Scripts\\python.exe"
+  }
+]

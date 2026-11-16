@@ -1,0 +1,9 @@
+{
+  "pipeline__model__subsample": 1.0,
+  "pipeline__model__reg_lambda": 5.0,
+  "pipeline__model__n_estimators": 300,
+  "pipeline__model__min_child_weight": 3,
+  "pipeline__model__max_depth": 2,
+  "pipeline__model__learning_rate": 0.1,
+  "pipeline__model__colsample_bytree": 1.0
+}

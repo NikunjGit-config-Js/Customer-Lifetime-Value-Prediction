@@ -1,0 +1,300 @@
+
+RUN C:\Users\acer\Projects\customer-lifetime-value\.venv\Scripts\python.exe -m scripts.prepare_data
+Reading genuine UCI workbook
+{
+  "raw_rows": 541909,
+  "raw_customers": 4372,
+  "removed_rows_sequential": {
+    "missing_customer_id": 135080,
+    "duplicate_rows": 5225,
+    "cancelled_invoices": 8872,
+    "nonpositive_quantity": 0,
+    "nonpositive_price": 40,
+    "invalid_date": 0
+  },
+  "clean_rows": 392692,
+  "clean_customers": 4338,
+  "clean_invoices": 18532,
+  "first_transaction": "2010-12-01 08:26:00",
+  "last_transaction": "2011-12-09 12:50:00",
+  "eligible_customers": 3317,
+  "observation_rows": 224036,
+  "observation_invoices": 11413,
+  "target_rows_all_customers": 151630,
+  "target_rows_eligible_customers": 112641,
+  "future_only_customers_excluded": 980,
+  "no_future_purchase_customers": 1446,
+  "observation_start_inclusive": "2010-12-01 00:00:00",
+  "cutoff_exclusive": "2011-09-01 00:00:00",
+  "target_start_inclusive": "2011-09-01 00:00:00",
+  "target_end_exclusive": "2011-12-01 00:00:00",
+  "source_url": "https://archive.ics.uci.edu/static/public/352/online+retail.zip",
+  "source_page": "https://archive.ics.uci.edu/dataset/352/online-retail",
+  "archive_sha256": "f5385cbb54bbebf7196389109c6b0621faab0c304e3702548165e71c84aede8b",
+  "workbook_sha256": "43465a06f2ccf7c8b5bd2892bc7defb52f97487934fe93b16ae4c3936424676d",
+  "original_workspace_data": "None found; workspace was empty at initial inspection.",
+  "target": "91-day positive purchase revenue in GBP; excludes refunds, not lifetime profit."
+}
+
+RUN C:\Users\acer\Projects\customer-lifetime-value\.venv\Scripts\python.exe -m scripts.train_model
+Training 2653 customers; holding out 664 customers
+Fitting 5 folds for each of 12 candidates, totalling 60 fits
+[CV] END pipeline__model__colsample_bytree=1.0, pipeline__model__learning_rate=0.1, pipeline__model__max_depth=2, pipeline__model__min_child_weight=15, pipeline__model__n_estimators=200, pipeline__model__reg_lambda=10.0, pipeline__model__subsample=0.75; total time=   0.8s
+[CV] END pipeline__model__colsample_bytree=1.0, pipeline__model__learning_rate=0.1, pipeline__model__max_depth=2, pipeline__model__min_child_weight=15, pipeline__model__n_estimators=200, pipeline__model__reg_lambda=10.0, pipeline__model__subsample=0.75; total time=   0.7s
+[CV] END pipeline__model__colsample_bytree=1.0, pipeline__model__learning_rate=0.1, pipeline__model__max_depth=2, pipeline__model__min_child_weight=15, pipeline__model__n_estimators=200, pipeline__model__reg_lambda=10.0, pipeline__model__subsample=0.75; total time=   0.6s
+[CV] END pipeline__model__colsample_bytree=1.0, pipeline__model__learning_rate=0.1, pipeline__model__max_depth=2, pipeline__model__min_child_weight=15, pipeline__model__n_estimators=200, pipeline__model__reg_lambda=10.0, pipeline__model__subsample=0.75; total time=   0.7s
+[CV] END pipeline__model__colsample_bytree=1.0, pipeline__model__learning_rate=0.1, pipeline__model__max_depth=2, pipeline__model__min_child_weight=15, pipeline__model__n_estimators=200, pipeline__model__reg_lambda=10.0, pipeline__model__subsample=0.75; total time=   0.7s
+[CV] END pipeline__model__colsample_bytree=1.0, pipeline__model__learning_rate=0.03, pipeline__model__max_depth=5, pipeline__model__min_child_weight=15, pipeline__model__n_estimators=300, pipeline__model__reg_lambda=5.0, pipeline__model__subsample=0.75; total time=   2.1s
+[CV] END pipeline__model__colsample_bytree=1.0, pipeline__model__learning_rate=0.03, pipeline__model__max_depth=5, pipeline__model__min_child_weight=15, pipeline__model__n_estimators=300, pipeline__model__reg_lambda=5.0, pipeline__model__subsample=0.75; total time=   2.1s
+[CV] END pipeline__model__colsample_bytree=1.0, pipeline__model__learning_rate=0.03, pipeline__model__max_depth=5, pipeline__model__min_child_weight=15, pipeline__model__n_estimators=300, pipeline__model__reg_lambda=5.0, pipeline__model__subsample=0.75; total time=   2.0s
+[CV] END pipeline__model__colsample_bytree=1.0, pipeline__model__learning_rate=0.03, pipeline__model__max_depth=5, pipeline__model__min_child_weight=15, pipeline__model__n_estimators=300, pipeline__model__reg_lambda=5.0, pipeline__model__subsample=0.75; total time=   2.2s
+[CV] END pipeline__model__colsample_bytree=1.0, pipeline__model__learning_rate=0.03, pipeline__model__max_depth=5, pipeline__model__min_child_weight=15, pipeline__model__n_estimators=300, pipeline__model__reg_lambda=5.0, pipeline__model__subsample=0.75; total time=   2.0s
+[CV] END pipeline__model__colsample_bytree=1.0, pipeline__model__learning_rate=0.1, pipeline__model__max_depth=5, pipeline__model__min_child_weight=15, pipeline__model__n_estimators=300, pipeline__model__reg_lambda=10.0, pipeline__model__subsample=0.75; total time=   2.0s
+[CV] END pipeline__model__colsample_bytree=1.0, pipeline__model__learning_rate=0.1, pipeline__model__max_depth=5, pipeline__model__min_child_weight=15, pipeline__model__n_estimators=300, pipeline__model__reg_lambda=10.0, pipeline__model__subsample=0.75; total time=   1.9s
+[CV] END pipeline__model__colsample_bytree=1.0, pipeline__model__learning_rate=0.1, pipeline__model__max_depth=5, pipeline__model__min_child_weight=15, pipeline__model__n_estimators=300, pipeline__model__reg_lambda=10.0, pipeline__model__subsample=0.75; total time=   1.9s
+[CV] END pipeline__model__colsample_bytree=1.0, pipeline__model__learning_rate=0.1, pipeline__model__max_depth=5, pipeline__model__min_child_weight=15, pipeline__model__n_estimators=300, pipeline__model__reg_lambda=10.0, pipeline__model__subsample=0.75; total time=   1.9s
+[CV] END pipeline__model__colsample_bytree=1.0, pipeline__model__learning_rate=0.1, pipeline__model__max_depth=5, pipeline__model__min_child_weight=15, pipeline__model__n_estimators=300, pipeline__model__reg_lambda=10.0, pipeline__model__subsample=0.75; total time=   1.9s
+[CV] END pipeline__model__colsample_bytree=1.0, pipeline__model__learning_rate=0.1, pipeline__model__max_depth=2, pipeline__model__min_child_weight=15, pipeline__model__n_estimators=300, pipeline__model__reg_lambda=5.0, pipeline__model__subsample=0.75; total time=   0.9s
+[CV] END pipeline__model__colsample_bytree=1.0, pipeline__model__learning_rate=0.1, pipeline__model__max_depth=2, pipeline__model__min_child_weight=15, pipeline__model__n_estimators=300, pipeline__model__reg_lambda=5.0, pipeline__model__subsample=0.75; total time=   0.9s
+[CV] END pipeline__model__colsample_bytree=1.0, pipeline__model__learning_rate=0.1, pipeline__model__max_depth=2, pipeline__model__min_child_weight=15, pipeline__model__n_estimators=300, pipeline__model__reg_lambda=5.0, pipeline__model__subsample=0.75; total time=   0.9s
+[CV] END pipeline__model__colsample_bytree=1.0, pipeline__model__learning_rate=0.1, pipeline__model__max_depth=2, pipeline__model__min_child_weight=15, pipeline__model__n_estimators=300, pipeline__model__reg_lambda=5.0, pipeline__model__subsample=0.75; total time=   0.9s
+[CV] END pipeline__model__colsample_bytree=1.0, pipeline__model__learning_rate=0.1, pipeline__model__max_depth=2, pipeline__model__min_child_weight=15, pipeline__model__n_estimators=300, pipeline__model__reg_lambda=5.0, pipeline__model__subsample=0.75; total time=   0.9s
+[CV] END pipeline__model__colsample_bytree=1.0, pipeline__model__learning_rate=0.1, pipeline__model__max_depth=2, pipeline__model__min_child_weight=3, pipeline__model__n_estimators=300, pipeline__model__reg_lambda=5.0, pipeline__model__subsample=1.0; total time=   0.8s
+[CV] END pipeline__model__colsample_bytree=1.0, pipeline__model__learning_rate=0.1, pipeline__model__max_depth=2, pipeline__model__min_child_weight=3, pipeline__model__n_estimators=300, pipeline__model__reg_lambda=5.0, pipeline__model__subsample=1.0; total time=   0.8s
+[CV] END pipeline__model__colsample_bytree=1.0, pipeline__model__learning_rate=0.1, pipeline__model__max_depth=2, pipeline__model__min_child_weight=3, pipeline__model__n_estimators=300, pipeline__model__reg_lambda=5.0, pipeline__model__subsample=1.0; total time=   0.8s
+[CV] END pipeline__model__colsample_bytree=1.0, pipeline__model__learning_rate=0.1, pipeline__model__max_depth=2, pipeline__model__min_child_weight=3, pipeline__model__n_estimators=300, pipeline__model__reg_lambda=5.0, pipeline__model__subsample=1.0; total time=   0.9s
+[CV] END pipeline__model__colsample_bytree=1.0, pipeline__model__learning_rate=0.1, pipeline__model__max_depth=2, pipeline__model__min_child_weight=3, pipeline__model__n_estimators=300, pipeline__model__reg_lambda=5.0, pipeline__model__subsample=1.0; total time=   1.0s
+[CV] END pipeline__model__colsample_bytree=1.0, pipeline__model__learning_rate=0.06, pipeline__model__max_depth=5, pipeline__model__min_child_weight=8, pipeline__model__n_estimators=100, pipeline__model__reg_lambda=1.0, pipeline__model__subsample=0.75; total time=   0.8s
+[CV] END pipeline__model__colsample_bytree=1.0, pipeline__model__learning_rate=0.06, pipeline__model__max_depth=5, pipeline__model__min_child_weight=8, pipeline__model__n_estimators=100, pipeline__model__reg_lambda=1.0, pipeline__model__subsample=0.75; total time=   0.8s
+[CV] END pipeline__model__colsample_bytree=1.0, pipeline__model__learning_rate=0.06, pipeline__model__max_depth=5, pipeline__model__min_child_weight=8, pipeline__model__n_estimators=100, pipeline__model__reg_lambda=1.0, pipeline__model__subsample=0.75; total time=   0.8s
+[CV] END pipeline__model__colsample_bytree=1.0, pipeline__model__learning_rate=0.06, pipeline__model__max_depth=5, pipeline__model__min_child_weight=8, pipeline__model__n_estimators=100, pipeline__model__reg_lambda=1.0, pipeline__model__subsample=0.75; total time=   0.8s
+[CV] END pipeline__model__colsample_bytree=1.0, pipeline__model__learning_rate=0.06, pipeline__model__max_depth=5, pipeline__model__min_child_weight=8, pipeline__model__n_estimators=100, pipeline__model__reg_lambda=1.0, pipeline__model__subsample=0.75; total time=   0.9s
+[CV] END pipeline__model__colsample_bytree=0.75, pipeline__model__learning_rate=0.03, pipeline__model__max_depth=4, pipeline__model__min_child_weight=3, pipeline__model__n_estimators=300, pipeline__model__reg_lambda=1.0, pipeline__model__subsample=1.0; total time=   1.5s
+[CV] END pipeline__model__colsample_bytree=0.75, pipeline__model__learning_rate=0.03, pipeline__model__max_depth=4, pipeline__model__min_child_weight=3, pipeline__model__n_estimators=300, pipeline__model__reg_lambda=1.0, pipeline__model__subsample=1.0; total time=   1.5s
+[CV] END pipeline__model__colsample_bytree=0.75, pipeline__model__learning_rate=0.03, pipeline__model__max_depth=4, pipeline__model__min_child_weight=3, pipeline__model__n_estimators=300, pipeline__model__reg_lambda=1.0, pipeline__model__subsample=1.0; total time=   1.5s
+[CV] END pipeline__model__colsample_bytree=0.75, pipeline__model__learning_rate=0.03, pipeline__model__max_depth=4, pipeline__model__min_child_weight=3, pipeline__model__n_estimators=300, pipeline__model__reg_lambda=1.0, pipeline__model__subsample=1.0; total time=   1.5s
+[CV] END pipeline__model__colsample_bytree=0.75, pipeline__model__learning_rate=0.03, pipeline__model__max_depth=4, pipeline__model__min_child_weight=3, pipeline__model__n_estimators=300, pipeline__model__reg_lambda=1.0, pipeline__model__subsample=1.0; total time=   1.6s
+[CV] END pipeline__model__colsample_bytree=0.75, pipeline__model__learning_rate=0.1, pipeline__model__max_depth=2, pipeline__model__min_child_weight=8, pipeline__model__n_estimators=300, pipeline__model__reg_lambda=10.0, pipeline__model__subsample=0.75; total time=   1.2s
+[CV] END pipeline__model__colsample_bytree=0.75, pipeline__model__learning_rate=0.1, pipeline__model__max_depth=2, pipeline__model__min_child_weight=8, pipeline__model__n_estimators=300, pipeline__model__reg_lambda=10.0, pipeline__model__subsample=0.75; total time=   1.1s
+[CV] END pipeline__model__colsample_bytree=0.75, pipeline__model__learning_rate=0.1, pipeline__model__max_depth=2, pipeline__model__min_child_weight=8, pipeline__model__n_estimators=300, pipeline__model__reg_lambda=10.0, pipeline__model__subsample=0.75; total time=   0.9s
+[CV] END pipeline__model__colsample_bytree=0.75, pipeline__model__learning_rate=0.1, pipeline__model__max_depth=2, pipeline__model__min_child_weight=8, pipeline__model__n_estimators=300, pipeline__model__reg_lambda=10.0, pipeline__model__subsample=0.75; total time=   0.9s
+[CV] END pipeline__model__colsample_bytree=0.75, pipeline__model__learning_rate=0.1, pipeline__model__max_depth=2, pipeline__model__min_child_weight=8, pipeline__model__n_estimators=300, pipeline__model__reg_lambda=10.0, pipeline__model__subsample=0.75; total time=   1.0s
+[CV] END pipeline__model__colsample_bytree=1.0, pipeline__model__learning_rate=0.1, pipeline__model__max_depth=4, pipeline__model__min_child_weight=15, pipeline__model__n_estimators=300, pipeline__model__reg_lambda=5.0, pipeline__model__subsample=0.75; total time=   1.9s
+[CV] END pipeline__model__colsample_bytree=1.0, pipeline__model__learning_rate=0.1, pipeline__model__max_depth=4, pipeline__model__min_child_weight=15, pipeline__model__n_estimators=300, pipeline__model__reg_lambda=5.0, pipeline__model__subsample=0.75; total time=   1.6s
+[CV] END pipeline__model__colsample_bytree=1.0, pipeline__model__learning_rate=0.1, pipeline__model__max_depth=4, pipeline__model__min_child_weight=15, pipeline__model__n_estimators=300, pipeline__model__reg_lambda=5.0, pipeline__model__subsample=0.75; total time=   1.6s
+[CV] END pipeline__model__colsample_bytree=1.0, pipeline__model__learning_rate=0.1, pipeline__model__max_depth=4, pipeline__model__min_child_weight=15, pipeline__model__n_estimators=300, pipeline__model__reg_lambda=5.0, pipeline__model__subsample=0.75; total time=   1.7s
+[CV] END pipeline__model__colsample_bytree=1.0, pipeline__model__learning_rate=0.1, pipeline__model__max_depth=4, pipeline__model__min_child_weight=15, pipeline__model__n_estimators=300, pipeline__model__reg_lambda=5.0, pipeline__model__subsample=0.75; total time=   1.6s
+[CV] END pipeline__model__colsample_bytree=0.75, pipeline__model__learning_rate=0.06, pipeline__model__max_depth=4, pipeline__model__min_child_weight=3, pipeline__model__n_estimators=200, pipeline__model__reg_lambda=1.0, pipeline__model__subsample=0.75; total time=   1.1s
+[CV] END pipeline__model__colsample_bytree=0.75, pipeline__model__learning_rate=0.06, pipeline__model__max_depth=4, pipeline__model__min_child_weight=3, pipeline__model__n_estimators=200, pipeline__model__reg_lambda=1.0, pipeline__model__subsample=0.75; total time=   1.1s
+[CV] END pipeline__model__colsample_bytree=0.75, pipeline__model__learning_rate=0.06, pipeline__model__max_depth=4, pipeline__model__min_child_weight=3, pipeline__model__n_estimators=200, pipeline__model__reg_lambda=1.0, pipeline__model__subsample=0.75; total time=   1.1s
+[CV] END pipeline__model__colsample_bytree=0.75, pipeline__model__learning_rate=0.06, pipeline__model__max_depth=4, pipeline__model__min_child_weight=3, pipeline__model__n_estimators=200, pipeline__model__reg_lambda=1.0, pipeline__model__subsample=0.75; total time=   1.2s
+[CV] END pipeline__model__colsample_bytree=0.75, pipeline__model__learning_rate=0.06, pipeline__model__max_depth=4, pipeline__model__min_child_weight=3, pipeline__model__n_estimators=200, pipeline__model__reg_lambda=1.0, pipeline__model__subsample=0.75; total time=   1.2s
+[CV] END pipeline__model__colsample_bytree=0.75, pipeline__model__learning_rate=0.03, pipeline__model__max_depth=3, pipeline__model__min_child_weight=8, pipeline__model__n_estimators=300, pipeline__model__reg_lambda=5.0, pipeline__model__subsample=1.0; total time=   1.1s
+[CV] END pipeline__model__colsample_bytree=0.75, pipeline__model__learning_rate=0.03, pipeline__model__max_depth=3, pipeline__model__min_child_weight=8, pipeline__model__n_estimators=300, pipeline__model__reg_lambda=5.0, pipeline__model__subsample=1.0; total time=   1.1s
+[CV] END pipeline__model__colsample_bytree=0.75, pipeline__model__learning_rate=0.03, pipeline__model__max_depth=3, pipeline__model__min_child_weight=8, pipeline__model__n_estimators=300, pipeline__model__reg_lambda=5.0, pipeline__model__subsample=1.0; total time=   1.1s
+[CV] END pipeline__model__colsample_bytree=0.75, pipeline__model__learning_rate=0.03, pipeline__model__max_depth=3, pipeline__model__min_child_weight=8, pipeline__model__n_estimators=300, pipeline__model__reg_lambda=5.0, pipeline__model__subsample=1.0; total time=   1.1s
+[CV] END pipeline__model__colsample_bytree=0.75, pipeline__model__learning_rate=0.03, pipeline__model__max_depth=3, pipeline__model__min_child_weight=8, pipeline__model__n_estimators=300, pipeline__model__reg_lambda=5.0, pipeline__model__subsample=1.0; total time=   1.1s
+[CV] END pipeline__model__colsample_bytree=1.0, pipeline__model__learning_rate=0.1, pipeline__model__max_depth=2, pipeline__model__min_child_weight=15, pipeline__model__n_estimators=200, pipeline__model__reg_lambda=1.0, pipeline__model__subsample=1.0; total time=   0.6s
+[CV] END pipeline__model__colsample_bytree=1.0, pipeline__model__learning_rate=0.1, pipeline__model__max_depth=2, pipeline__model__min_child_weight=15, pipeline__model__n_estimators=200, pipeline__model__reg_lambda=1.0, pipeline__model__subsample=1.0; total time=   0.6s
+[CV] END pipeline__model__colsample_bytree=1.0, pipeline__model__learning_rate=0.1, pipeline__model__max_depth=2, pipeline__model__min_child_weight=15, pipeline__model__n_estimators=200, pipeline__model__reg_lambda=1.0, pipeline__model__subsample=1.0; total time=   0.6s
+[CV] END pipeline__model__colsample_bytree=1.0, pipeline__model__learning_rate=0.1, pipeline__model__max_depth=2, pipeline__model__min_child_weight=15, pipeline__model__n_estimators=200, pipeline__model__reg_lambda=1.0, pipeline__model__subsample=1.0; total time=   0.6s
+[CV] END pipeline__model__colsample_bytree=1.0, pipeline__model__learning_rate=0.1, pipeline__model__max_depth=2, pipeline__model__min_child_weight=15, pipeline__model__n_estimators=200, pipeline__model__reg_lambda=1.0, pipeline__model__subsample=1.0; total time=   0.7s
+{
+  "seed": 42,
+  "eligible_customers": 3317,
+  "train_customers": 2653,
+  "test_customers": 664,
+  "customer_overlap": 0,
+  "cv": {
+    "folds": 5,
+    "candidates": 12,
+    "total_fits": 60,
+    "refit_metric": "macro_f1",
+    "accuracy_mean": 0.5838780513804499,
+    "accuracy_std": 0.022294352949471546,
+    "macro_f1_mean": 0.5421710816705866,
+    "macro_f1_std": 0.016392876588743256,
+    "note": "Chosen candidate CV scores are tuning estimates; test remains independent."
+  },
+  "xgboost_test": {
+    "accuracy": 0.5813253012048193,
+    "macro_f1": 0.547430992209258,
+    "classification_report": {
+      "No purchase": {
+        "precision": 0.5759162303664922,
+        "recall": 0.7719298245614035,
+        "f1-score": 0.6596701649175413,
+        "support": 285.0
+      },
+      "Regular spender": {
+        "precision": 0.5045871559633027,
+        "recall": 0.2849740932642487,
+        "f1-score": 0.36423841059602646,
+        "support": 193.0
+      },
+      "High spender": {
+        "precision": 0.6416184971098265,
+        "recall": 0.5967741935483871,
+        "f1-score": 0.6183844011142061,
+        "support": 186.0
+      },
+      "accuracy": 0.5813253012048193,
+      "macro avg": {
+        "precision": 0.5740406278132072,
+        "recall": 0.5512260371246797,
+        "f1-score": 0.547430992209258,
+        "support": 664.0
+      },
+      "weighted avg": {
+        "precision": 0.5735880831593305,
+        "recall": 0.5813253012048193,
+        "f1-score": 0.562234200080986,
+        "support": 664.0
+      }
+    },
+    "confusion_matrix": [
+      [
+        220,
+        38,
+        27
+      ],
+      [
+        103,
+        55,
+        35
+      ],
+      [
+        59,
+        16,
+        111
+      ]
+    ]
+  },
+  "majority_baseline_test": {
+    "accuracy": 0.4292168674698795,
+    "macro_f1": 0.20021074815595363,
+    "classification_report": {
+      "No purchase": {
+        "precision": 0.4292168674698795,
+        "recall": 1.0,
+        "f1-score": 0.6006322444678609,
+        "support": 285.0
+      },
+      "Regular spender": {
+        "precision": 0.0,
+        "recall": 0.0,
+        "f1-score": 0.0,
+        "support": 193.0
+      },
+      "High spender": {
+        "precision": 0.0,
+        "recall": 0.0,
+        "f1-score": 0.0,
+        "support": 186.0
+      },
+      "accuracy": 0.4292168674698795,
+      "macro avg": {
+        "precision": 0.1430722891566265,
+        "recall": 0.3333333333333333,
+        "f1-score": 0.20021074815595363,
+        "support": 664.0
+      },
+      "weighted avg": {
+        "precision": 0.18422711932065614,
+        "recall": 0.4292168674698795,
+        "f1-score": 0.2578014904718981,
+        "support": 664.0
+      }
+    },
+    "confusion_matrix": [
+      [
+        285,
+        0,
+        0
+      ],
+      [
+        193,
+        0,
+        0
+      ],
+      [
+        186,
+        0,
+        0
+      ]
+    ]
+  },
+  "train_tier_counts": [
+    1161,
+    746,
+    746
+  ],
+  "test_tier_counts": [
+    285,
+    193,
+    186
+  ],
+  "positive_spend_median_gbp": 602.38,
+  "segmentation": {
+    "fit_customers": 2653,
+    "assigned_customers": 3317,
+    "clusters": 4,
+    "pca_components": 2,
+    "pca_explained_variance_ratio": [
+      0.7438531838919618,
+      0.1862325375248955
+    ],
+    "train_silhouette_pca_space": 0.4312419824336895
+  },
+  "saved_model_reload_prediction_match": true,
+  "historical_accuracy_above_85_reproduced": false,
+  "training_seconds": 80.58748919999925,
+  "python": "3.12.10"
+}
+
+RUN C:\Users\acer\Projects\customer-lifetime-value\.venv\Scripts\python.exe -m scripts.predict
+Loaded cltv_model.joblib; predicted 3317 real customers -> C:\Users\acer\Projects\customer-lifetime-value\results\customer_predictions.csv
+
+RUN C:\Users\acer\Projects\customer-lifetime-value\.venv\Scripts\python.exe -m scripts.execute_notebooks
+Executed 01_exploration.ipynb: 7 code cells, 4 inline PNGs
+Executed 02_customer_segmentation.ipynb: 6 code cells, 3 inline PNGs
+
+RUN C:\Users\acer\Projects\customer-lifetime-value\.venv\Scripts\python.exe -m scripts.verify_project
+No broken requirements found.
+Loaded cltv_model.joblib; predicted 3317 real customers -> C:\Users\acer\Projects\customer-lifetime-value\results\verified_predictions.csv
+{
+  "status": "PASS",
+  "checks_passed": 11,
+  "checks": [
+    "Installed dependencies pass pip check",
+    "Official UCI row count, sequential cleaning totals and real customer counts reconcile",
+    "Customer-disjoint outer split; final target calibration and segment fitting use training IDs only",
+    "All historical features rebuild identically without future transactions; target/ID allow-list enforced",
+    "Final positive-spend boundary and RFM scaler statistics recompute from training customers only",
+    "Five fold boundaries recompute correctly; fold-local segmenters exclude validation and test IDs",
+    "Future-spending totals and tier boundary edge cases reconcile with real transactions",
+    "Reloaded model/baseline predictions, held-out accuracy, macro F1 and confusion matrices match saved results",
+    "Feature-only CSV inference reproduces all customer predictions; probabilities sum to one",
+    "Twelve completed five-fold XGBoost candidates and four genuine behavioral segments verified",
+    "Both notebooks fully executed with inline PNGs; all saved plots decode and contain nonblank image content"
+  ],
+  "notebooks": [
+    {
+      "name": "01_exploration.ipynb",
+      "code_cells": 7,
+      "inline_images": 4
+    },
+    {
+      "name": "02_customer_segmentation.ipynb",
+      "code_cells": 6,
+      "inline_images": 3
+    }
+  ],
+  "png_figures": 9,
+  "customers": 3317,
+  "train_customers": 2653,
+  "test_customers": 664,
+  "model_sha256": "2642da3f31ed71864f2bf01906c99c533993d00ebd93863d1406b2eece0d5541"
+}
+
+SUCCESS: complete pipeline verified in 226.1s
